@@ -1,16 +1,17 @@
 % Author: Roman Garnett, romangarnett@gmail.com
+% Modifier: Bernhard Geiger, geiger@ieee.org
 %
 % The style file will be kept up-to-date at the following GitHub repository:
 %
-% https://github.com/automl-conf/LatexTemplate
+% https://github.com/bcgeiger/LatexAbstractTemplate
 %
 % Please file any issues you may have there.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{automl}[2024/02/08 AutoML submission/camera-ready style file]
+\ProvidesPackage{extabst}[2025/01/20 submission/camera-ready style file]
 
 % change this every year for notice string
-\newcommand{\@utomlyear}{2024}
+\newcommand{\@utomlyear}{2025}
 
 % declare final option, which creates camera-ready copy
 \newif\if@submission\@submissiontrue
@@ -46,7 +47,7 @@
 
 % handle tweaks for camera-ready copy vs. submission copy
 \if@submission
-  \newcommand{\c@nferencestring}{Submitted to AutoML \@utomlyear}
+  \newcommand{\c@nferencestring}{Submitted to WS on AI for Energy and Green AI \@utomlyear}
 
   % line numbers for submission
   \usepackage[right]{lineno}
@@ -77,7 +78,7 @@
       }{}
   }
 \else
-  \newcommand{\c@nferencestring}{AutoML \@utomlyear}
+  \newcommand{\c@nferencestring}{AIEnergyGreenAI \@utomlyear}
 \fi
 
 \if@workshop
@@ -120,7 +121,7 @@
   }
   \pagestyle{fancy}
   \@ifpackageloaded{fullpage}
-    {\PackageWarning{automl}{fullpage package not allowed! Overwriting formatting.}}
+    {\PackageWarning{extabst}{fullpage package not allowed! Overwriting formatting.}}
     {}
 }
 
