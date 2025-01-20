@@ -47,7 +47,7 @@
 
 % handle tweaks for camera-ready copy vs. submission copy
 \if@submission
-  \newcommand{\c@nferencestring}{Submitted to WS on AI for Energy and Green AI \@utomlyear}
+  \newcommand{\c@nferencestring}{Submitted to Green--AI\textsuperscript{2}--Energy \@utomlyear}
 
   % line numbers for submission
   \usepackage[right]{lineno}
@@ -83,7 +83,7 @@
 
 \if@workshop
   \let\@ldconferencestring\c@nferencestring
-  \renewcommand{\c@nferencestring}{\@ldconferencestring{} Workshop Track}
+  \renewcommand{\c@nferencestring}{\@ldconferencestring{} Workshop}
 \else
   \if@preprint
     \renewcommand{\c@nferencestring}{Preprint. Under review.}

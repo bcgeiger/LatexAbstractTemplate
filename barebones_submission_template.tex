@@ -11,6 +11,7 @@
 \usepackage{microtype} % microtypography
 \usepackage{booktabs}  % tables
 \usepackage{url}  % urls
+\usepackage{lipsum}
 
 % AMS math
 \usepackage{amsmath}
@@ -43,7 +44,7 @@
 %
 % \usepackage[hidesupplement,final,workshop]{automl}
 
-\usepackage{automl}
+\usepackage[workshop,final]{extabst}
 
 % You may use any reference style as long as you are consistent throughout the
 % document. As a default we suggest author--year citations; for bibtex and
@@ -68,7 +69,7 @@
 % ]{biblatex}
 % \addbibresource{...}
 
-\title{Example Submission for AutoML 2024}
+\title{Example Submission for Green--AI\textsuperscript{2}--Energy 2025}
 
 % The syntax for adding an author is
 %
@@ -79,7 +80,13 @@
 %
 % \author[1,2]{\nameemail{Anonymous}{anonymous@example.com}}
 
-\author[1]{\nameemail{Author 1}{email1@example.com}}
+\author[1,$\ast$]{\nameemail{Author 1}{email1@example.com}}
+\author[1,2,$\ast$]{\nameemail{Author 2}{email2@example.com}}
+\author[2]{\nameemail{Author 3}{email3@example.com}}
+
+\affil[$\ast$]{Equal contribution.}
+\affil[1]{Institution 1}
+\affil[2]{Institution 2}
 
 % the list might continue:
 % \author[2,3]{\nameemail{Author 2}{email2@example.com}}
@@ -92,8 +99,6 @@
 
 % Specify corresponding affiliations after authors, referring to counter used in
 % \author:
-
-\affil[1]{Institution 1}
 
 % the list might continue:
 % \affil[2]{Institution 2}
@@ -122,8 +127,54 @@
 
 \maketitle
 
-\begin{abstract}
-\end{abstract}
+% ==== The Abstract field can be left empty, as the full two pages count as an (extended) abstract.
+% \begin{abstract}
+% \end{abstract}
+
+\section{Introduction}
+\lipsum[1-2]
+
+
+
+\section{Method and Experiments}
+\begin{figure}
+  \begin{subfigure}[t]{0.5\linewidth}
+    \centering
+    \framebox{Amazing figure!}
+    \caption{Subfigure caption.}
+    \label{example_figure_left}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.5\linewidth}
+    \centering
+    \framebox{Another amazing figure!}
+    \caption{Another subfigure caption.}
+    \label{example_figure_right}
+  \end{subfigure}
+  \caption{An example figure with subfigures. \subref{example_figure_left}: an
+    amazing figure. \subref{example_figure_right}: another amazing figure.}
+  \label{example_figure}
+\end{figure}
+
+\begin{table}
+  \caption{An example table using the \texttt{booktabs} package.}
+  \label{example_table}
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    & \multicolumn{2}{c}{metric} \\
+    \cmidrule{2-3}
+    method & accuracy & time \\
+    \midrule
+    baseline & 10 & 100 \\
+    our method & \textbf{100} & \textbf{10} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\lipsum[3-6]
+
+\section{Discussion and Outlook}
+\lipsum[7-8]
 
 % ==== Formatting Instructions
 % The page limit for the main paper is 9 pages; this includes the broader impact
@@ -136,33 +187,9 @@
 % interact with the reviewers to ensure acceptance decisions can be made regarding
 % near-camera-ready work.
 
-\section{Example Section}
-% This example section may be removed.
-
-\section{Broader Impact Statement}
-% The 9 pages allocated for the main paper must include a broader impact
-% statement regarding the approach, datasets and applications proposed/used in
-% your paper. It should reflect on the environmental, ethical and societal
-% implications of your work. The statement should require at most one page and
-% must be included both at submission and camera-ready time.
-%
-% If authors have reflected on their work and determined that there are no
-% likely negative broader impacts, they may use the following statement:
-%
-% After careful reflection, the authors have determined that this work presents
-% no notable negative impacts to society or the environment.
-%
-% This section is included in the template as a default, but you can also place these
-% discussions anywhere else in the main paper, e.g., in the introduction/future work.
-%
-% The Centre for the Governance of AI has written an excellent guide for writing
-% good broader impact statements (for the NeurIPS conference) that may be a
-% useful resource for AutoML-Conf authors:
-%
-% https://medium.com/@GovAI/a-guide-to-writing-the-neurips-impact-statement-4293b723f832
 
 \begin{acknowledgements}
-  % content in acknowledgements will be automatically hidden during submission
+  \lipsum[9]
 \end{acknowledgements}
 
 % ==== Bibliography
@@ -176,233 +203,5 @@
 
 % supplemental material -- everything hereafter will be suppressed during
 % submission time if the hidesupplement option is provided!
-
-\newpage
-\section*{Submission Checklist}
-
-% All submissions must include a section containing the AutoML submission
-% checklist, shown below. The submission checklist does not count towards the
-% page limit and must be included at submission and camera-ready time.  The
-% submission checklist draws upon related submission checklists:
-%
-% the NeurIPS '22 checklist: https://neurips.cc/Conferences/2022/PaperInformation/PaperChecklist
-%     and the NAS checklist: https://www.automl.org/wp-content/uploads/NAS/NAS_checklist.pdf
-%
-% For each question, change the default \answerTODO{} to either:
-%
-%     \answerYes{[justification]},
-%     \answerNo{[justification]}, or
-%     \answerNA{[justification]}.
-
-% *You must include a brief justification to your answer,} either by referencing
-% *the appropriate section of your paper or providing a brief inline
-% *description.* For example:
-%
-% -  Did you include the license of the code and datasets?
-%
-%    \answerYes{See Section~\ref{sec:code}.
-%
-% - Did you include all the code for running experiments?
-%
-%   \answerNo{We include the code we wrote for conducting the experiments, but
-%   complete replication depends on proprietary libraries for executing on a
-%   private compute cluster. The code therefore is not runnable without
-%   modification. To compensate, we provide a runnable but non-parallelized
-%   version of the code that could replicate the results at the expense of a
-%   greater wall-clock time.}
-%
-% - Did you include the license of the datasets?
-%
-%   \answerNA{Our experiments were conducted on publicly available datasets and
-%   we have not introduced new datasets.}
-%
-% Please note that if you answer a question with \verb|\answerNo{}|, we expect
-% that you provide an explanation and/or compensation for the omission. For
-% example, if you cannot provide complete evaluation code for some reason, you
-% might instead provide code for a minimal reproduction of the main insights of
-% your paper.
-%
-% Please do not modify the questions and only use the provided macros for your
-% answers. Note that the submission checklist does not count towards the page
-% limit.
-
-\begin{enumerate}
-\item For all authors\dots
-  %
-  \begin{enumerate}
-  \item Do the main claims made in the abstract and introduction accurately
-    reflect the paper's contributions and scope?
-    %
-    \answerTODO{}
-    %
-  \item Did you describe the limitations of your work?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss any potential negative societal impacts of your work?
-    %
-    \answerTODO{}
-    %
-  \item Did you read the ethics review guidelines and ensure that your paper
-    conforms to them? \url{https://2022.automl.cc/ethics-accessibility/}
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you ran experiments\dots
-  %
-  \begin{enumerate}
-  \item Did you use the same evaluation protocol for all methods being compared (e.g.,
-    same benchmarks, data (sub)sets, available resources)?
-    %
-    \answerTODO{}
-    %
-  \item Did you specify all the necessary details of your evaluation (e.g., data splits,
-    pre-processing, search spaces, hyperparameter tuning)?
-    %
-    \answerTODO{}
-    %
-  \item Did you repeat your experiments (e.g., across multiple random seeds or splits) to account for the impact of randomness in your methods or data?
-    %
-    \answerTODO{}
-    %
-  \item Did you report the uncertainty of your results (e.g., the variance across random seeds or splits)?
-    %
-    \answerTODO{}
-    %
-  \item Did you report the statistical significance of your results?
-    %
-    \answerTODO{}
-    %
-  \item Did you use tabular or surrogate benchmarks for in-depth evaluations?
-    %
-    \answerTODO{}
-    %
-  \item Did you compare performance over time and describe how you selected the maximum duration?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the total amount of compute and the type of resources
-    used (e.g., type of \textsc{gpu}s, internal cluster, or cloud provider)?
-    %
-    \answerTODO{}
-    %
-  \item Did you run ablation studies to assess the impact of different
-    components of your approach?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item With respect to the code used to obtain your results\dots
-  %
-  \begin{enumerate}
-\item Did you include the code, data, and instructions needed to reproduce the
-    main experimental results, including all requirements (e.g.,
-    \texttt{requirements.txt} with explicit versions), random seeds, an instructive
-    \texttt{README} with installation, and execution commands (either in the
-    supplemental material or as a \textsc{url})?
-    %
-    \answerTODO{}
-    %
-  \item Did you include a minimal example to replicate results on a small subset
-    of the experiments or on toy data?
-    %
-    \answerTODO{}
-    %
-  \item Did you ensure sufficient code quality and documentation so that someone else
-    can execute and understand your code?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the raw results of running your experiments with the given
-    code, data, and instructions?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the code, additional data, and instructions needed to generate
-    the figures and tables in your paper based on the raw results?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you used existing assets (e.g., code, data, models)\dots
-  %
-  \begin{enumerate}
-  \item Did you cite the creators of used assets?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss whether and how consent was obtained from people whose
-    data you're using/curating if the license requires it?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss whether the data you are using/curating contains
-    personally identifiable information or offensive content?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you created/released new assets (e.g., code, data, models)\dots
-  %
-  \begin{enumerate}
-    %
-    \item Did you mention the license of the new assets (e.g., as part of your code submission)?
-    %
-    \answerTODO{}
-    %
-    \item Did you include the new assets either in the supplemental material or as
-    a \textsc{url} (to, e.g., GitHub or Hugging Face)?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you used crowdsourcing or conducted research with human subjects\dots
-  %
-  \begin{enumerate}
-  \item Did you include the full text of instructions given to participants and
-    screenshots, if applicable?
-    %
-    \answerTODO{}
-    %
-  \item Did you describe any potential participant risks, with links to
-    Institutional Review Board (\textsc{irb}) approvals, if applicable?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the estimated hourly wage paid to participants and the
-    total amount spent on participant compensation?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-\item If you included theoretical results\dots
-  %
-  \begin{enumerate}
-  \item Did you state the full set of assumptions of all theoretical results?
-    %
-    \answerTODO{}
-    %
-  \item Did you include complete proofs of all theoretical results?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\end{enumerate}
-
-\newpage
-\appendix
-
-% \supplemental material can be placed here; this material will be hidden if the
-% [hidesupplement] option is provided
-
-\section{Example Supplemental Section}
-% This example section may be removed.
 
 \end{document}

@@ -45,7 +45,7 @@
 %
 % \usepackage[hidesupplement,final,workshop]{automl}
 
-\usepackage[final]{automl}
+\usepackage[final]{extabst}
 
 % You may use any reference style as long as you are consistent throughout the
 % document. As a default we suggest author--year citations; for bibtex and
@@ -81,7 +81,7 @@
 }
 \end{filecontents}
 
-\title{Documentation for the \texttt{automl} Package}
+\title{Documentation for the \texttt{extabst} Package}
 
 % The syntax for adding an author is
 %
@@ -128,10 +128,10 @@
 
 % define PDF metadata, aids in accessibility of the resulting PDF
 \hypersetup{%
-  pdfauthor={AutoML}, % will be reset to "Anonymous" unless the "final" package option is given
-  pdftitle={Documentation for the automl Package},
-  pdfsubject={Documentation for automl Package},
-  pdfkeywords={AutoML, LaTeX, style}
+  pdfauthor={Modifier}, % will be reset to "Anonymous" unless the "final" package option is given
+  pdftitle={Documentation for the extabst Package},
+  pdfsubject={Documentation for extabst Package},
+  pdfkeywords={extabst, LaTeX, style}
 }
 
 \begin{document}
@@ -142,16 +142,16 @@
   Create with \verb|\begin{abstract} ... \end{abstract}|.
 \end{abstract}
 
-The \texttt{automl} package provides a \LaTeX{} style for the AutoML conference.
+The \texttt{extabst} package provides a \LaTeX{} style for extended conference/workshop abstracts.
 This document provides some notes regarding the package and tips for typesetting
 manuscripts. The package and this document is maintained at the following GitHub
 repository:
 \begin{center}
-  \url{https://github.com/automl-conf/LatexTemplate}
+  \url{https://github.com/bcgeiger/LatexAbstractTemplate}
 \end{center}
-Users are encouraged to submit issues, bug reports, etc.\ to:
+which was forked from 
 \begin{center}
-  \url{https://github.com/automl-conf/LatexTemplate/issues}
+  \url{https://github.com/automl-conf/LatexTemplate}
 \end{center}
 
 A barebones submission is also available as
@@ -159,9 +159,8 @@ A barebones submission is also available as
 
 \section{Package Options}
 
-With no options, the \texttt{automl} package prepares an anonymized manuscript
-ready for submission to any track of the main conference (i.e., the methods or
-\textsc{abcd} tracks for AutoML 2024). Several options are supported changing
+With no options, the \texttt{extabst} package prepares an anonymized manuscript
+ready for submission. Several options are supported changing
 this behavior:
 \begin{itemize}
 \item \texttt{revealauthors} -- produces a non-anonymized manuscript for
@@ -349,224 +348,6 @@ resource for AutoML authors.%
 
 % supplemental material -- everything hereafter will be suppressed during
 % submission time if the hidesupplement option is provided!
-
-\newpage
-\section*{Submission Checklist}
-All submissions must include a section containing the AutoML submission
-checklist, shown below. The submission checklist does not count towards the page
-limit and must be included at submission and camera-ready time.  The submission
-checklist draws upon related submission checklists:
-%
-\href{https://neurips.cc/Conferences/2022/PaperInformation/PaperChecklist}
-     {the NeurIPS '22 checklist}
-%
-and the
-\href{https://www.automl.org/wp-content/uploads/NAS/NAS_checklist.pdf}
-     {\textsc{nas} checklist}.
-%
-
-For each question, change the default \verb|\answerTODO{}| (typeset \answerTODO)
-to
-\verb|\answerYes{[justification]}| (typeset \answerYes),
-\verb|\answerNo{[justification]}| (typeset \answerNo), or
-\verb|\answerNA{[justification]}| (typeset \answerNA).
-\textbf{You must include a brief justification to your answer,} either by
-referencing the appropriate section of your paper or providing a brief inline
-description.  For example:
-\begin{itemize}
-\item Did you include the license of the code and datasets? \answerYes{See
-  Section~\ref{sec:code}.}
-\item Did you include all the code for running experiments? \answerNo{We include
-  the code we wrote for conducting the experiments, but complete replication
-  depends on proprietary libraries for executing on a private compute
-  cluster. The code therefore is not runnable without modification. To
-  compensate, we provide a runnable but non-parallelized version of the code
-  that could replicate the results at the expense of a greater wall-clock time.}
-\item Did you include the license of the datasets? \answerNA{Our experiments
-  were conducted on publicly available datasets and we have not introduced new
-  datasets.}
-\end{itemize}
-Please note that if you answer a question with \verb|\answerNo{}|, we expect
-that you provide an explanation and/or compensation for the omission. For
-example, if you cannot provide complete evaluation code for some reason, you
-might instead provide code for a minimal reproduction of the main insights of
-your paper.
-
-Please do not modify the questions and only use the provided macros for your
-answers. Note that the submission checklist does not count towards the page
-limit. If you choose to modify \texttt{instructions.tex}, please delete these
-instructions and only keep the Submission Checklist section heading above along
-with the questions/answers below.
-
-\begin{enumerate}
-\item For all authors\dots
-  %
-  \begin{enumerate}
-  \item Do the main claims made in the abstract and introduction accurately
-    reflect the paper's contributions and scope?
-    %
-    \answerTODO{}
-    %
-  \item Did you describe the limitations of your work?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss any potential negative societal impacts of your work?
-    %
-    \answerTODO{}
-    %
-  \item Did you read the ethics review guidelines and ensure that your paper
-    conforms to them? \url{https://2022.automl.cc/ethics-accessibility/}
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you ran experiments\dots
-  %
-  \begin{enumerate}
-  \item Did you use the same evaluation protocol for all methods being compared (e.g.,
-    same benchmarks, data (sub)sets, available resources)?
-    %
-    \answerTODO{}
-    %
-  \item Did you specify all the necessary details of your evaluation (e.g., data splits,
-    pre-processing, search spaces, hyperparameter tuning)?
-    %
-    \answerTODO{}
-    %
-  \item Did you repeat your experiments (e.g., across multiple random seeds or splits) to account for the impact of randomness in your methods or data?
-    %
-    \answerTODO{}
-    %
-  \item Did you report the uncertainty of your results (e.g., the variance across random seeds or splits)?
-    %
-    \answerTODO{}
-    %
-  \item Did you report the statistical significance of your results?
-    %
-    \answerTODO{}
-    %
-  \item Did you use tabular or surrogate benchmarks for in-depth evaluations?
-    %
-    \answerTODO{}
-    %
-  \item Did you compare performance over time and describe how you selected the maximum duration?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the total amount of compute and the type of resources
-    used (e.g., type of \textsc{gpu}s, internal cluster, or cloud provider)?
-    %
-    \answerTODO{}
-    %
-  \item Did you run ablation studies to assess the impact of different
-    components of your approach?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item With respect to the code used to obtain your results\dots
-  %
-  \begin{enumerate}
-\item Did you include the code, data, and instructions needed to reproduce the
-    main experimental results, including all requirements (e.g.,
-    \texttt{requirements.txt} with explicit versions), random seeds, an instructive
-    \texttt{README} with installation, and execution commands (either in the
-    supplemental material or as a \textsc{url})?
-    %
-    \answerTODO{}
-    %
-  \item Did you include a minimal example to replicate results on a small subset
-    of the experiments or on toy data?
-    %
-    \answerTODO{}
-    %
-  \item Did you ensure sufficient code quality and documentation so that someone else
-    can execute and understand your code?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the raw results of running your experiments with the given
-    code, data, and instructions?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the code, additional data, and instructions needed to generate
-    the figures and tables in your paper based on the raw results?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you used existing assets (e.g., code, data, models)\dots
-  %
-  \begin{enumerate}
-  \item Did you cite the creators of used assets?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss whether and how consent was obtained from people whose
-    data you're using/curating if the license requires it?
-    %
-    \answerTODO{}
-    %
-  \item Did you discuss whether the data you are using/curating contains
-    personally identifiable information or offensive content?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you created/released new assets (e.g., code, data, models)\dots
-  %
-  \begin{enumerate}
-    %
-    \item Did you mention the license of the new assets (e.g., as part of your code submission)?
-    %
-    \answerTODO{}
-    %
-    \item Did you include the new assets either in the supplemental material or as
-    a \textsc{url} (to, e.g., GitHub or Hugging Face)?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\item If you used crowdsourcing or conducted research with human subjects\dots
-  %
-  \begin{enumerate}
-  \item Did you include the full text of instructions given to participants and
-    screenshots, if applicable?
-    %
-    \answerTODO{}
-    %
-  \item Did you describe any potential participant risks, with links to
-    Institutional Review Board (\textsc{irb}) approvals, if applicable?
-    %
-    \answerTODO{}
-    %
-  \item Did you include the estimated hourly wage paid to participants and the
-    total amount spent on participant compensation?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-\item If you included theoretical results\dots
-  %
-  \begin{enumerate}
-  \item Did you state the full set of assumptions of all theoretical results?
-    %
-    \answerTODO{}
-    %
-  \item Did you include complete proofs of all theoretical results?
-    %
-    \answerTODO{}
-    %
-  \end{enumerate}
-  %
-\end{enumerate}
 
 \newpage
 \appendix
