@@ -1,20 +1,13 @@
-# AutoML-Conf LatexTemplate
+# LaTeX Template for Extended Abstracts
 
-Latex Template for [AutoML-Conf](https://www.automl.cc)
+LaTeX Template for [Workshop on AI for Sustainable Energy Systems and Green AI](https://www.enfield-project.eu/ws_ai_sustainable_and_green). This template is a fork of [this one](https://github.com/automl-conf/LatexTemplate), and I gratefully acknowledge the of the contributors of this repository.
 
 ## Provided files
 
-* `instructions.tex` and `instructions.pdf` -- documentation for the `automl`
+* `instructions.tex` and `instructions.pdf` -- documentation for the `extabst`
   LaTeX package and tips for authors
 * `barebones_submission_template.tex` -- a barebones submission template
 
-## Questions
+## Modifiers
 
-For questions and bug reports, please file issues at https://github.com/automl-conf/LatexTemplate/issues
-
-## Contributors
-
-* Roman Garnett
-* Frank Hutter
-* Marius Lindauer
-* Jake Gardner
+* Bernhard Geiger
